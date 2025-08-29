@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letter for You</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      background: #fefefe;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: url('https://i.ibb.co/5L6PjdG/roses-bg.jpg') center/cover no-repeat;
+      text-align: center;
+      padding: 3rem 1rem;
+      position: relative;
+    }
+    .photos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .photos img {
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 3px solid white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      color: white;
+      font-size: 2rem;
+      margin-top: 1.5rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+    .invitation {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border-left: 4px solid #ffafbd;
+      background: #fff7f7;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .download-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.7rem 1.2rem;
+      background: #ffafbd;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .download-btn:hover {
+      background: #ff8aa6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="photos">
+      <img src="https://i.ibb.co/0yrkMfGH/image1.jpg" alt="Photo 1">
+      <img src="https://i.ibb.co/Vc92QNvJ/image2.jpg" alt="Photo 2">
+      <img src="https://i.ibb.co/QjKqyTm4/image3.jpg" alt="Photo 3">
+    </div>
+    <h1>Matlhatsi ❤️ Sonia</h1>
+  </header>
+  <main id="letter">
+    <h2>Apology and Invitation Letter</h2>
+    <p><strong>To:</strong> Lesego Sonia Mokhonoana<br>
+       <strong>From:</strong> Matlhatsi Paul Letwaba</p>
+
+    <p>Dear Sonia,</p>
+    <p>I hope you are well. I am writing this letter because I owe you a true apology. What I did — flirting with another girl while being with you — was wrong. I cannot defend myself because there is no excuse for that. I take full responsibility, and I regret hurting you.</p>
+
+    <p>The past three weeks have given me time to think deeply. I asked myself why I acted that way, and I realized it was because I got too comfortable and lazy in love. I stopped putting in the effort you deserve. I see now that your presence gave me strength, confidence, and joy in life. Without you, life has felt empty. These weeks opened my eyes, and I know now the kind of man I want to be: someone who values, respects, and loves you the way you deserve.</p>
+
+    <div class="invitation">
+      <p><strong>Invitation</strong><br>
+      In an effort to demonstrate my commitment to change and to rebuild our bond, I would like to formally invite you to join me for a movie outing:</p>
+      <ul>
+        <li><strong>Event:</strong> Movie Date</li>
+        <li><strong>Date:</strong> 31 August 2025</li>
+        <li><strong>Location:</strong> Mall of the North</li>
+        <li><strong>Time:</strong> To be mutually agreed upon based on your preferred movie schedule</li>
+        <li><strong>Host:</strong> Matlhatsi Paul Letwaba (all expenses will be covered)</li>
+      </ul>
+      <p>The purpose of this invitation is not only to spend quality time together but also to show you that I am ready to actively invest in us, moving forward with honesty, respect, and care. Should you feel that being with me is not possible at this time, I completely understand, and I will respect your decision. Even after the movie, if you feel that the connection is not there, you can say that, and I will accept it.</p>
+    </div>
+
+    <p><strong>If you choose not to come</strong><br>
+    If you feel you cannot handle being with me anymore, I will respect your decision. I still want to thank you for everything. You have been a big part of my life, and I will always appreciate you. I know I will regret what I did for a long time, but I will carry the lessons with me forever.</p>
+
+    <p>Even if we do not get back together, I truly wish you happiness. I hope you find someone who treats you even better than I did — someone who gives you all the love, respect, and care you deserve. But I will still wait for you to come back because I believe we are made for each other; I just ruined it.</p>
+
+    <p>Thank you for taking the time to read this.</p>
+
+    <p>With respect and regret,<br>
+    <strong>Matlhatsi Paul Letwaba</strong></p>
+
+    <button class="download-btn" onclick="downloadPDF()">Download as PDF</button>
+  </main>
+
+  <footer>
+    &copy; 2025 Matlhatsi Paul Letwaba
+  </footer>
+
+  <script>
+    function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      doc.setFont("times", "normal");
+      doc.setFontSize(12);
+      doc.text(document.getElementById("letter").innerText, 15, 20);
+      doc.save("Apology_Letter.pdf");
+    }
+  </script>
+</body>
+</html>
